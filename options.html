@@ -9,14 +9,9 @@
   <body>
     <label for="numLoops">Number of loops:</label>
     <input type="number" id="numLoops" min="1" value="1">
+    <label for="tourneyName">Name of Tournament:</label>
+    <input type="string" id="tourneyName">
     <button id="saveButton">Save</button>
-    <script>
-      document.getElementById('saveButton').addEventListener('click', () => {
-        const numLoops = parseInt(document.getElementById('numLoops').value);
-        chrome.storage.sync.set({ numLoops }, () => {
-          alert('Settings saved.');
-        });
-      });
-    </script>
+    <script src="options.js"></script>
   </body>
 </html>

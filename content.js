@@ -33,9 +33,9 @@ function clickButtonByText(text) {
     return false;
   }
   
-  async function clickButtonsInSequence(numLoops) {
+  async function clickButtonsInSequence(numLoops, tourneyName) {
     const steps = [
-      { type: 'text', value: 'Monday Night Hoops' },
+      { type: 'text', value: tourneyName },
       { type: 'class', value: 'styles__button__gmYRZ styles__green__aqzHf styles__regular__hL3Nt styles__solid__BthGK styles__full__xmWA8' },
       { type: 'text', value: 'Yes' },
       { type: 'text', value: 'Turn autopilot on' },
@@ -67,8 +67,9 @@ function clickButtonByText(text) {
     }
   }
   
-  chrome.storage.sync.get(['numLoops'], async function(data) {
+  chrome.storage.sync.get(['numLoops', 'tourneyName'], async function(data) {
     const numLoops = data.numLoops || 25;
-    await clickButtonsInSequence(numLoops);
+    const tourneyName = data.tourneyName;
+    await clickButtonsInSequence(numLoops, tourneyName);
   });
   
