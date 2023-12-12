@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body { width: 300px; }
+      label { display: block; margin-top: 16px; }
+    </style>
+  </head>
+  <body>
+    <label for="numLoops">Number of loops:</label>
+    <input type="number" id="numLoops" min="1" value="1">
+    <button id="saveButton">Save</button>
+    <script>
+      document.getElementById('saveButton').addEventListener('click', () => {
+        const numLoops = parseInt(document.getElementById('numLoops').value);
+        chrome.storage.sync.set({ numLoops }, () => {
+          alert('Settings saved.');
+        });
+      });
+    </script>
+  </body>
+</html>
