@@ -72,8 +72,6 @@ function clickButtonByText(text) {
           { type: 'text', value: '8 hr per pick'},
           { type: 'class', value: 'styles__button__gmYRZ styles__green__aqzHf styles__regular__hL3Nt styles__solid__BthGK styles__full__xmWA8' },
           { type: 'text', value: 'Yes' },
-          { type: 'text', value: 'Turn autopilot on' },
-          { type: 'text', value: 'Yes' },
           { type: 'home', value: 'Drafts' },
         ];
       
